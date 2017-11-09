@@ -21,6 +21,22 @@ end
 
 # Let's do this ...
 
+## USERS
+
+puts "Creating Users ..."
+
+User.destroy_all
+
+user1 = User.create!({
+  email: '123@abc.com'
+  password_digest: '123abc'
+})
+
+user2 = User.create!({
+  email: 'xyz@987.com'
+  password_digest: 'xyz987'
+})
+
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -131,6 +147,5 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
-
 
 puts "DONE!"
