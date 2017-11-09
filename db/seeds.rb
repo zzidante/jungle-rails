@@ -27,15 +27,15 @@ puts "Creating Users ..."
 
 User.destroy_all
 
-user1 = User.create!({
-  email: '123@abc.com'
-  password_digest: '123abc'
-})
+# user1 = User.create!({
+#   email: '123@abc.com'
+#   password_digest: '123abc'
+# })
 
-user2 = User.create!({
-  email: 'xyz@987.com'
-  password_digest: 'xyz987'
-})
+# user2 = User.create!({
+#   email: 'xyz@987.com'
+#   password_digest: 'xyz987'
+# })
 
 ## CATEGORIES
 
