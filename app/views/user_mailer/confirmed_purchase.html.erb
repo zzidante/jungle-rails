@@ -1,7 +1,45 @@
-<h1>Welcome to the Jungle <%= @email %>!</h1>
-<p>
-  You have successfully purchased from Jungle!,
-  Your purchase confirmation is: <%= @email %>.<br>
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <h1>Welcome to the Jungle!</h1>
+  <p>
+    You have successfully purchased from Jungle!,
+    Your purchase confirmation is: <%= @order.id %>.<br>
+  </p>
+    <h2>Order Details</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
 
-<p>Thank you and have a great day!</p>
+        <tbody>
+          <% @order.line_items.each do |line_item| %>
+            <%= render 'product_html', line_item: line_item %>
+          <% end %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>
+              TOTAL:
+            </th>
+        
+            <th>
+              $<%= '%.2f' % (@order.total_cents.to_i/100.0) %> 
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+
+  </body>
+</html>
+
+
+
+<p>Thank you for your business <%= @order.email %> and have a great day!</p>
