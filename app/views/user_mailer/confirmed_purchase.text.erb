@@ -2,4 +2,12 @@ Welcome to the Jungle!%>!
 ===============================================
 You have successfully purchased from Jungle!,
 Your purchase confirmation is: <%= @order.id %>.
+
+<% @order.line_items.each do |line_item| %>
+  <%= render 'product_text', line_item: line_item %>
+<% end %>
+
+___Order Total___
+$<%= '%.2f' % (@order.total_cents.to_i/100.0) %> 
+
 Thank you for your business <%= @order.email %> and have a great day!

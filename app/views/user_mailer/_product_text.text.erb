@@ -1,0 +1,15 @@
+<% if product = Product.find_by(id: line_item.product.id) %>
+
+  Product
+  ==================
+  <%= product.name %>
+  <%= product.description %>
+
+  Quantity
+  ==================
+  <%= line_item.quantity %>
+
+  ____Price Total____
+  $<%= '%.2f' % (line_item.total_price_cents.to_i/100.0) %> 
+
+<% end %>
