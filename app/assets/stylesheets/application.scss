@@ -9,4 +9,25 @@
 // Global
 body {
   padding-top: 70px;
+
+  div {
+    #keep-shop-btn {
+      margin-top: 50px;
+    }
+  }
+
+  button {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+  }
+  
+  button:hover {
+    background: rgb(70, 131, 179);
+  }
 }
