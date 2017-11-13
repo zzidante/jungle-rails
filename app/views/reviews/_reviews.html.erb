@@ -1,9 +1,12 @@
   <article>
     <h3>See Reviews</h3>
     <% @product.reviews.reverse.each do |review| %>
-      <% @user = User.find(review.user_id) %>
       <div class="well">
-        <p><strong>User Name:</strong> <%=@user.first_name%></p>
+      <% if review.user_id %>
+        <% @user = User.find(review.user_id) %>
+          <p><strong>User Name:</strong> <%=@user.first_name%></p>
+      <% end %>
+  
         <p><strong>Description:</strong> <%=review.description%></p>
         <p><strong>Rating: <%=review.rating%>/5</strong></p>
         <% if current_user.id == review.user_id%>

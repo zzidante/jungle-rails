@@ -40,9 +40,12 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 !["Home Page!"]()
 
-!["Checkout!"]()
-
-!["Email!"]()
+!["Item Details!"]()
 
 !["Reviews!"]()
 
+!["Cart Screen!"]()
+
+!["Order Screen!"]()
+
+!["Email Message!"]()
