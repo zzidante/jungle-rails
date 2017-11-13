@@ -20,12 +20,16 @@ unless Rails.env.development?
 end
 
 # Let's do this ...
+  # Reset all records
+
+  Review.destroy_all
+  User.destroy_all
+  Product.destroy_all
+  
 
 ## USERS
 
 puts "Creating Users ..."
-
-User.destroy_all
 
 user1 = User.find_or_create_by!({
   first_name: '123',
@@ -59,8 +63,6 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 ## PRODUCTS
 
 puts "Re-creating Products ..."
-
-Product.destroy_all
 
 cat1.products.create!({
   name:  'Men\'s Classy shirt',
@@ -157,6 +159,41 @@ cat3.products.create!({
   image: open_asset('furniture3.jpg'),
   quantity: 23,
   price: 2_483.75
+})
+
+## REVIEWS
+
+puts "Finding Products ..."
+
+pro1 = Product.find_by! name: 'Red Bookshelf'
+pro2 = Product.find_by! name: 'Optimal Sleeping Bed'
+pro3 = Product.find_by! name: 'Modern Skateboards'
+
+# Item 1
+pro1.reviews.create!({
+  user_id:  user1.id,
+  description: "I love fitting all my odds and ends on this!!!!!!!",
+  rating: 4
+})
+
+pro1.reviews.create!({
+  user_id:  user2.id,
+  description: "The red paint chips off!",
+  rating: 2
+})
+
+# Item 2
+pro2.reviews.create!({
+  user_id:  user1.id,
+  description: "Not good for front sleepers!",
+  rating: 3
+})
+
+# Item 3
+pro3.reviews.create!({
+  user_id:  user3.id,
+  description: "My daughter loves this!",
+  rating: 5
 })
 
 puts "DONE!"
