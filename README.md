@@ -38,14 +38,20 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Stripe
 * Bcrypt
 
+## Home Page
 !["Home Page!"](https://github.com/zzidante/jungle-rails/blob/master/Jungle%20App%20Screenshots/1.%20Home%20Page.png?raw=true)
 
+## Item Details
 !["Item Details!"](https://github.com/zzidante/jungle-rails/blob/master/Jungle%20App%20Screenshots/2.%20Item%20details.png?raw=true)
 
+## Reviews
 !["Reviews!"](https://github.com/zzidante/jungle-rails/blob/master/Jungle%20App%20Screenshots/3.%20Reviews.png?raw=true)
 
+## Cart Screen
 !["Cart Screen!"](https://github.com/zzidante/jungle-rails/blob/master/Jungle%20App%20Screenshots/4.%20Cart%20Screen.png?raw=true)
 
+## Order Screen
 !["Order Screen!"](https://github.com/zzidante/jungle-rails/blob/master/Jungle%20App%20Screenshots/5.%20Order%20Screen.png?raw=true)
 
+## Email Message ('live' client)
 !["Email Message!"](https://github.com/zzidante/jungle-rails/blob/master/Jungle%20App%20Screenshots/6.%20Email%20Message.png?raw=true)
