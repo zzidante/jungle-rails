@@ -27,15 +27,26 @@ puts "Creating Users ..."
 
 User.destroy_all
 
-# user1 = User.create!({
-#   email: '123@abc.com'
-#   password_digest: '123abc'
-# })
+user1 = User.find_or_create_by!({
+  first_name: '123',
+  last_name: 'abc',
+  email: '123@abc.com',
+  password_digest: '123abc'
+})
 
-# user2 = User.create!({
-#   email: 'xyz@987.com'
-#   password_digest: 'xyz987'
-# })
+user2 = User.find_or_create_by!({
+  first_name: '987',
+  last_name: 'xyz',
+  email: 'xyz@987.com',
+  password_digest: 'xyz987'
+})
+
+user3 = User.find_or_create_by!({
+  first_name: 'aaa',
+  last_name: '111',
+  email: 'aaa@111.com',
+  password_digest: 'aaa111'
+})
 
 ## CATEGORIES
 
