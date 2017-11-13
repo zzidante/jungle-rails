@@ -1,11 +1,11 @@
-  
   <article>
     <h3>See Reviews</h3>
     <% @product.reviews.reverse.each do |review| %>
+      <% @user = User.find(review.user_id) %>
       <div class="well">
-        <p><%=review.description%></p>
-        <p><strong><%=review.rating%></strong></p>
-        <p>By: <%=review.user_id%></p>
+        <p><strong>User Name:</strong> <%=@user.first_name%></p>
+        <p><strong>Description:</strong> <%=review.description%></p>
+        <p><strong>Rating: <%=review.rating%>/5</strong></p>
         <% if current_user.id == review.user_id%>
           <%= link_to 'Delete', [review.product, review],
             method: :delete,
