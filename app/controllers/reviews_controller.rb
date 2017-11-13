@@ -2,8 +2,12 @@ class ReviewsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @reviews = @product.reviews.create(review_params)
-    @reviews.user_id = current_user.id    
-    redirect_to product_path(@product)
+    @reviews.user_id = current_user.id
+    if @reviews.save
+      redirect_to product_path(@product)
+    else
+      flash.now[:danger] = "error"
+    end
   end
 
   def destroy

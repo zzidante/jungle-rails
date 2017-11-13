@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:create, :show]
-  resources :sessions
+  resources :sessions, only: [:create, :new, :destroy]
   
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
