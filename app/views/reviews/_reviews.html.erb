@@ -1,0 +1,15 @@
+  <article>
+    <h3>See Reviews</h3>
+    <% @product.reviews.each do |review| %>
+      <div class="well">
+        <p><%=review.description%></p>
+        <p><strong><%=review.rating%></strong></p>
+        <p>By: <%=review.user_id%></p>
+        <%= link_to '[ X ]', [review.product, review],
+          method: :delete,
+          data: {confirm: 'Are you sure?'},
+          :class => 'btn btn-danger' %>
+        
+      </div>
+    <% end %>
+  </article>

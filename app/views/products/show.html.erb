@@ -28,35 +28,9 @@
 
   </article>
 
-  <article>
+  <%= render 'reviews/reviews' %>
+  <%= render 'reviews/form' %>
+  
 
-  <h3>Add Review</h3>
-
-      <%= form_for([@product, @product.reviews.build]) do |f| %>
-      <p>
-        <%= f.label :description %>
-        <%= f.text_area(:description, {:class => 'form-control' }) %> 
-      </p>
-      <p>
-        <%= f.label :rating %>
-        <%= f.select(:rating, options_for_select(1..5), {prompt: 'Rating'}, {:class => 'form-control' }) %>
-      </p>
-      <p>
-        <%= f.submit({:class => 'btn btn-default'})%>
-      </p>
-    <% end %>
-
-  </article>
-
-  <article>
-    <h3>See Reviews</h3>
-    <% @product.reviews.each do |review| %>
-      <div class="well">
-        <p><%=review.description%></p>
-        <p><strong><%=review.rating%></strong></p>
-        <p><%=review.user_id%></p>
-      </div>
-    <% end %>
-  </article>
 
 </section>
