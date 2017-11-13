@@ -48,4 +48,15 @@
 
   </article>
 
+  <article>
+    <h3>See Reviews</h3>
+    <% @product.reviews.each do |review| %>
+      <div class="well">
+        <p><%=review.description%></p>
+        <p><strong><%=review.rating%></strong></p>
+        <p><%=review.user_id%></p>
+      </div>
+    <% end %>
+  </article>
+
 </section>
