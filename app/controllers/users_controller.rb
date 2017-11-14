@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    # before_validation :downcase_email
+
 
   def show
     @user = User.find params[:id]
@@ -24,6 +26,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  # def downcase_email
+  #   self.email = email.downcase if email.present?
+  # end
 
   def user_params
     params.require(:user).permit(
